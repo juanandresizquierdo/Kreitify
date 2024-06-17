@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-center align-items-center mb-4">
+    <h2 class="me-3 text-white">Novedades</h2>
+    <a [routerLink]="['/all-songs']" class="btn custom-btn">Ver Todas las Canciones</a>
+  </div>
+
+
+    <div class="row">
+      <div class="col-md-4" *ngFor="let song of songs">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ song.title }}</h5>
+            <p class="card-text">
+              <strong>Artista:</strong> {{ song.artist }}<br>
+              <strong>Estilo:</strong> {{ song.genre }}<br>
+              <strong>Publicada:</strong> {{ song.publicationDate }}
+            </p>
+            <a [routerLink]="['/song-detail', song.id]" class="btn custom-btn">Ver Detalles</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  

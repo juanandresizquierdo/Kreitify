@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4 text-white">Canciones Más Escuchadas</h2>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let song of songs">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ song.title }}</h5>
+            <p class="card-text">
+              <strong>Artista:</strong> {{ song.artist }}<br>
+              <strong>Estilo:</strong> {{ song.genre }}<br>
+              <strong>Publicada:</strong> {{ song.publicationDate }}<br>
+              <strong>Reproducciones:</strong> {{ song.playCount }}
+            </p>
+            <a [routerLink]="['/song-detail', song.id]" class="btn custom-btn">Ver Detalles</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
